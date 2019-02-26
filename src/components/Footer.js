@@ -1,11 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 function Footer() {
-  return (
-    <footer>
-      <h3>This is an application footer</h3>
-    </footer>
-  );
+  return <h3>This is an application footer</h3>;
 }
 
 export default Footer;

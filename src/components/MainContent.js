@@ -1,12 +1,17 @@
-import React, { Component } from 'react';
-import MyInfo from './MyInfo';
-import Checkboxes from './Checkboxes';
+import React from 'react';
+//import MyInfo from './MyInfo';
+import ToDoItem from './ToDoItem';
 
 function MainContent() {
   return (
     <main>
-      <MyInfo />
-      <Checkboxes />
+      {/* <MyInfo /> */}
+      <div class="todo-list">
+        <ToDoItem text="Red" />
+        <ToDoItem text="Blue" />
+        <ToDoItem text="Green" />
+        <ToDoItem text="Organge" />
+      </div>
     </main>
   );
 }
