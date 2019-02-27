@@ -1,22 +1,12 @@
 import React from 'react';
 
-function ToDoItem() {
-  // const styles = {
-  //   redColor: { color: 'red' },
-  //   blueColor: { color: 'blue' },
-  //   greenColor: { color: 'green' },
-  //   orangeColor: { color: 'orange' }
-  // };
+function ToDoItem(props) {
+  console.log(props);
 
   return (
     <div className="todo-item">
       <input type="checkbox" name="red" value="red" />
-      <span>Random item place holder</span>
-
-      {/* <input type="checkbox" name="red" value="red" />
-      <span style={styles.redColor}>Red</span>
-      <br />
-      */}
+      <span style={props.data.fontColor}>{props.data.text}</span>
     </div>
   );
 }
