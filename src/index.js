@@ -12,3 +12,6 @@ ReactDOM.render(<App />, document.getElementById('root'));
 serviceWorker.unregister();
 
 //https://scrimba.com/p/p7P5Hd/cqP7bhm
+
+//color/styles generator
+//https://rgbcolorcode.com/color/19FFFF
