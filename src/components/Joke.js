@@ -1,7 +1,6 @@
 import React from 'react';
 
 function Joke(props) {
-  console.log(props);
   const { questionStyle, answerStyle, question, punchLine } = props.data;
 
   return (

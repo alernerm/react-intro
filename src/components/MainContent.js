@@ -2,6 +2,9 @@ import React from 'react';
 import MyInfo from './MyInfo';
 import ToDoItem from './ToDoItem';
 import Joke from './Joke';
+import jokesData from '../data/jokesData';
+import productsData from '../data/productsData';
+import Product from './Product';
 
 function MainContent() {
   const styles = {
@@ -13,51 +16,32 @@ function MainContent() {
     aquaColor: { color: '#12BDBD' }
   };
 
+  const jokesComponents = jokesData.map(joke => (
+    <Joke
+      key={joke.id}
+      data={{
+        question: joke.question,
+        punchLine: joke.punchLine,
+        questionStyle: styles.purpleColor,
+        answerStyle: styles.aquaColor
+      }}
+    />
+  ));
+
+  const productComponents = productsData.map(product => (
+    <Product key={product.id} data={{ product }} />
+  ));
+
   return (
     <main>
+      <h3 style={styles.redColor}>Products Component</h3>
+      {productComponents}
+      <br />
+      <br />
+      <br />
+      <hr />
       <h3 style={styles.redColor}>Jokes Component</h3>
-      <Joke
-        data={{
-          question: 'What do you call a funny mountain?',
-          punchLine: 'hill - arious',
-          questionStyle: styles.purpleColor,
-          answerStyle: styles.aquaColor
-        }}
-      />
-      <Joke
-        data={{
-          question: 'What goes up when the rain comes down?',
-          punchLine: 'An umbrella',
-          questionStyle: styles.purpleColor,
-          answerStyle: styles.aquaColor
-        }}
-      />
-      <Joke
-        data={{
-          question: 'Why did the belt go to jail?',
-          punchLine: 'Because it held up a pair of pants!',
-          questionStyle: styles.purpleColor,
-          answerStyle: styles.aquaColor
-        }}
-      />
-      <Joke
-        data={{
-          question: '',
-          punchLine:
-            'I totally understand how batteries feel because I’m rarely ever included in things either.',
-          questionStyle: styles.purpleColor,
-          answerStyle: styles.aquaColor
-        }}
-      />
-      <Joke
-        data={{
-          question: '',
-          punchLine:
-            'If you want to catch a squirrel just climb a tree and act like a nut.',
-          questionStyle: styles.purpleColor,
-          answerStyle: styles.aquaColor
-        }}
-      />
+      {jokesComponents}
       <br />
       <br />
       <br />
